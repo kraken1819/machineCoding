@@ -46,7 +46,6 @@ public class Main {
         System.out.println(players.get(winnerId).getName() + " won the game.") ;
 
 
-        System.out.println("Rafee")  ;
 
     }
 }
