@@ -17,7 +17,7 @@ public class TikTakToeService {
         this.player1 = player1 ;
         this.player2 = player2 ;
     }
-    public boolean noOneWon(char[][] board){
+    public boolean somOneWon(char[][] board){
         //here we check if anOne won the game .
         //check the rows ;
         for(int i =0 ; i<3 ; i++) {
@@ -35,7 +35,7 @@ public class TikTakToeService {
         for(int i =0 ; i<3 ; i++) {
             boolean won = true ;
             for(int j=0 ; j<2 ; j++) {
-                if(!(board[j][i]!='-' && board[j][i] == board[j+1][i])) {
+                if(!(board[j][i] != '-' && board[j][i] == board[j+1][i])) {
                     won = false ;
                     break ;
                 }
@@ -69,8 +69,8 @@ public class TikTakToeService {
         Scanner scx = new Scanner(System.in) ;
         int i =0 ;
         board.printBoard();
-        while(noOneWon(board.getBoard()) && scx.hasNextInt()){
-
+        while(!(somOneWon(board.getBoard())) && scx.hasNextInt()){
+            System.out.println() ;
             int row = scx.nextInt() ;
             int col = scx.nextInt() ;
             Player currentPlayer ;
@@ -86,6 +86,20 @@ public class TikTakToeService {
             }
             board.printBoard() ;
             i++ ;
+        }
+
+        if(somOneWon(board.getBoard())){
+            Player winner ;
+            if(i%2==0){
+                winner = player2 ;
+            }else {
+                winner = player1;
+            }
+            System.out.println(winner.getName() + " won the game.") ;
+        }else {
+
+            int numOfMovesDone = i;
+            if (numOfMovesDone == 9) System.out.println("GameOver");
         }
     }
 }

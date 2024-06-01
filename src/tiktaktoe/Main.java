@@ -19,7 +19,7 @@ public class Main {
         Player p2 = new Player() ;
         p2.setSymbol(scx.next().charAt(0)) ;
         p2.setName(scx.next()) ;
-
+       
         Board board = new Board() ;
 
         TikTakToeService tiktaktoeservice = new TikTakToeService(board,p1,p2) ;
