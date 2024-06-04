@@ -25,7 +25,8 @@ public class Main {
         TikTakToeService tiktaktoeservice = new TikTakToeService(board,p1,p2) ;
 
         tiktaktoeservice.startGame() ;
-
+        
+        scx.close() ; 
 
     }
 }
