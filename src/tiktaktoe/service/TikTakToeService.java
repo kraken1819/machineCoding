@@ -101,5 +101,6 @@ public class TikTakToeService {
             int numOfMovesDone = i;
             if (numOfMovesDone == 9) System.out.println("GameOver");
         }
+        scx.close() ; 
     }
 }

@@ -45,7 +45,7 @@ public class Main {
         int winnerId = slc.startGame() ;
         System.out.println(players.get(winnerId).getName() + " won the game.") ;
 
-
+        sc.close() ; 
 
     }
 }
